@@ -277,7 +277,7 @@ $.prototype.fileinput.Constructor.prototype["setBeforeAjaxEnqueue"] = function (
     this.beforeAjaxEnqueue = func;
 };
 
-var upload_baseurl = `${$smfile.fileinput("getUploadUrl")}?source=bugt0racker&ts=${Date.now()}&rand=${Math.random()}`;
+var upload_baseurl = `${$smfile.fileinput("getUploadUrl")}?source=bugtracker&ts=${Date.now()}&rand=${Math.random()}`;
 
 $smfile.on('filelock', function (event, filestack, extraData) {
     $smfile.fileinput("setUploadUrl", `${upload_baseurl}&batch_size=${Object.keys(filestack).length}`);
