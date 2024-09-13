@@ -3,7 +3,7 @@ $.fn.fileinput.defaults.language = 'zh';
 let $smfile = $("#file");
 $smfile.fileinput({
     // theme: 'fas',
-    uploadUrl: BASE_URL + '/upload',
+    uploadUrl: BASE_URL + '/upload?source=bugtracker',
     uploadExtraData: function (previewId, index) {
         var dataArray = $("#upload_option").serializeArray(),
             len = dataArray.length,
