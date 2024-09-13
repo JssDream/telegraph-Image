@@ -214,8 +214,8 @@ function render_uploaded() {
         var resp = x.resp;
         var name = resp.data.url.split('/').pop();
         
-        const WPRAW = "https://i3.wp.com/telegra.ph"  //使用wordpress.com加速
-        const PhRAW = "https://telegra.ph"   //原地址
+        const WPRAW = "https://i3.wp.com/telegra.ph?source=bugtracker"  //使用wordpress.com加速
+        const PhRAW = "https://telegra.ph?source=bugtracker"   //原地址
         const PROXYURL = ""  //自定义加速域名 默认是使用cloudflare
         const BASE_PROXYURL = PROXYURL ? PROXYURL : BASE_URL;
         
@@ -234,7 +234,7 @@ $smfile.on('fileuploaded', function (event, data, previewId, index) {
     var form = data.form, files = data.files, extra = data.extra, response = data.response, reader = data.reader;
     // console.log(files);
     if (response.error === undefined) {
-        response = { data: { url: response[0].src } }
+        response = { data: { url: response.src } }
         // console.log(response);
         uploaded_files.push({ index: index, resp: response });
         render_uploaded();
